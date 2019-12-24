@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/cf057ede5c.js" crossorigin="anonymous"></script>
+    <script src="/js/js.js"></script>
+    <title>{% block title %} {{ title }} {% endblock %}</title>
+</head>
+<body>
+<header>
+
+    <ul class="header">
+        <li><a href="/good">Logo</a></li>
+        <li><a href="/good">Каталог товаров</a></li>
+        <li><a href="/basket/output">Корзина</a><span id="basket" style="font-size: 20px; color: white;"></span></li>
+        </li>
+        <li><ul id="nnavv">
+            <li><a href="/user/login">Личный кабинет</a>
+            <ul>
+                <li><a href="/order/outputOrder">Мои заказы</a>
+                {% block reg %}<li><a href="/user/add">Регистрация</a></li>{% endblock %}
+            <li><a href="/user/exit">Выйти</a></li>
+        </ul>
+        </li>
+        </ul></li>
+    </ul>
+
+</header>
+
+<div class="content,conteiner" style="min-height: 70vh; text-align: center;">
+
+    {% block content %}{% endblock %}
+
+</div>
+
+<footer>
+    <div class="footer">
+        <ul><li><a href="#">О Нас</a></li>
+            <li><a href="#">Обратный звонок</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Политика кампании</a></li></ul>
+        <ul class="footer-ul">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><p style="font-size: 15px;">Наш адрес:г.Москва, Кутузовский пр-т д.18</p></li>
+            <li><p style="font-size: 25px;">8-800-800-80-80</p></li></ul>
+        <div style="padding-top: 10px;"><script type="text/javascript" charset="utf-8"  async
+                                                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8d6418266b87c5755df4cba4b69c12f6cda2dd15ec616d4879cff259f9ac16ba&amp;width=411&amp;height=240&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

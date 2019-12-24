@@ -1,0 +1,48 @@
+{% extends "layouts/mainAdmin.twig" %}
+{% set title = 'Редактор заказа' %}
+{% block content %}
+    <form enctype="multipart/form-data"  method="POST" action="/order/EditOrder?id={{ user.id }}">
+        <h3>Форма редактирования заказа. Внесите нужные изменения и нажмите  кнопку СОХРАНИТЬ</h3>
+        <p>Имя получателя</p><input type="text" name="name" required value="{{ user.nameUser }}"> <br>
+        <p>Фамилия получателя</p><input type="text" name="lastName" required value="{{ user.lastName }}"> <br>
+        <p>Телефон получателя</p><input type="text" name="telephone" required value="{{ user.telephone }}"> <br>
+        <p>email получателя</p><input type="text" name="email" required value="{{ user.email }}"> <br>
+        <p>Адрес доставки</p><p><textarea name="adress" rows="3" cols="80">{{ user.adress }}</textarea></p><br>
+        <p>Статус заказа</p>
+        <p><select name="status" style="font-size: 18px;">
+                <option>{{ user.status }}</option>
+                <option value="В работе">В работе</option>
+                <option value="Обработан">Обработан</option>
+                <option value="Оплачен">Оплачен</option>
+                <option value="Отправлен">Отправлен</option>
+                <option value="Доставлен">Доставлен</option>
+            </select></p> <br>
+        <input name = "editName" type="submit" value="Сохранить" style="background-color: lightgreen;">
+    </form>
+    <td>
+        <table class="orderGoods" style="width: 1300px">
+            <tr><th></th><th>Имя товара</th><th>Цена товара</th><th>Валюта</th><th>Количество товара</th><th>Артикул товра</th><th>итог</th></tr>
+            {% set TotalOrder = 0  %}
+    {% for order in orders %}
+
+            <tr> <form enctype="multipart/form-data"  method="POST" action="/order/EditOrder?id_order={{ user.id }}&id_product={{ order.id_product }}">
+                    <td><img src="/gallery/{{ order.url_img }}" alt="{{ order.name }}" style="width:190px; height:150px;"></td>
+                     <td>{{ order.name }}</td>
+                      <td><input type="text" name="prise" required value="{{ order.prise }}"></td>
+                      <td>{{ order.currency }}</td>
+                       <td><input type="text" name="count" required value="{{ order.count }}"></td>
+                       <td><input type="text" name="idProduct" value="{{ order.id_product }}" READONLY></td>
+                       <td><input type="text" name="userId" value="{{user.id}}" READONLY style="display: none"></td>
+                       <td>{{ totalOrderPrice }}</td>
+                       <td><input name = "editGoods" type="submit" value="Сохранить"  style="background-color: lightgreen;"></td> </form>
+                   <td>
+                       <a href="/order/delGood?id={{ user.id }}&id_product={{ order.id_product }}">
+                           <button style="font-size: 20px; background-color: crimson">Удалить</button>
+                       </a>
+                   </td></tr>
+        {% set TotalOrder = TotalOrder + (order.prise * order.count) %}
+    {% endfor %}
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td>
+                <td style="background-color: slategrey;color:white; font-size: 20px"><p>Итого: {{ TotalOrder }} $</p></td></tr></table>
+    </td></tr></table>
+{% endblock %}
