@@ -1,0 +1,53 @@
+{% extends "layouts/main.twig" %}
+{% set title = 'Регистрация' %}
+{% block content %}
+    <div style="min-height: 60vh;">
+    <h4>Введите ваше имя, логин и пароль для регистрации в личный кабинет</h4>
+        <form action= "/user/add" enctype="multipart/form-data" method="POST" >
+            <input name="userName" placeholder="name"> <br>
+            <input name="login" placeholder="login"> <br>
+            <input name="pass" placeholder="password"><br>
+            <input name = "upload" type="submit" value="Зарегистрироваться"  style="background-color: lightgreen;">
+        </form>
+    </div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Регистрация пользователя';#}
+{#    $content = '';#}
+{#    $content .=<<<php#}
+{#    <div style="min-height: 60vh;">#}
+{#<h4>Введите ваше имя, логин и пароль для регистрации в личный кабинет</h4>#}
+{#    <form action= "?c=user&a=add" enctype="multipart/form-data" method="POST" >#}
+{#        <input name="userName" placeholder="name"> <br>#}
+{#        <input name="login" placeholder="login"> <br>#}
+{#        <input name="pass" placeholder="password"><br>#}
+{#        <input name = "upload" type="submit" value="Зарегистрироваться"  style="background-color: lightgreen;">#}
+{#    </form>#}
+{#</div>#}
+{#php;#}
+{#    echo $content;#}

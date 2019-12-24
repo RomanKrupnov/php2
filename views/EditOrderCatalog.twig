@@ -1,0 +1,72 @@
+{% extends "layouts/mainAdmin.twig" %}
+{% block content %}
+    <table class="order">
+        <tr style="background-color: lightgrey">
+            <th>Данные о получателе</th>
+            <th>Статус заказа</th>
+            <th> ЗАКАЗ</th>
+        </tr>
+        <tr>
+            <td>
+
+{#                {% for user in users %}#}
+                {% set TotalOrder = 0  %}
+                <p>{{ users.nameUser }}</p> <br>
+                <p>{{ users.lastName }}</p> <br>
+                <p>{{ users.telephone }}</p> <br>
+                <p>{{ users.email }}</p> <br>
+                <p>{{ users.adress }}</p></td>
+            <td><p>{{ users.status }}</p></td>
+            <td>
+                <table class="orderGoods" style="width: 1100px">
+                    <tr>
+                        <th></th>
+                        <th>Имя товара</th>
+                        <th>цена товара</th>
+                        <th>Валюта</th>
+                        <th>количество товара</th>
+                        <th>итог</th>
+                    </tr>
+                    {% for order in orders %}
+                        <tr>
+                            <td><img src="/gallery/{{ order.url_img }}" alt="{{ order.name }}"
+                                     style="width:190px; height:150px;"></td>
+                            <td>{{ order.name }}</td>
+                            <td> {{ order.prise }}</td>
+                            <td>{{ order.currency }}</td>
+                            <td>{{ order.count }}</td>
+                            <td>{{ order.prise * order.count  }}</td>
+                            {% set TotalOrder = TotalOrder + (order.prise * order.count) %}
+                        </tr>
+
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="background-color: slategrey;color:white; font-size: 20px"><p>Итого: {{ TotalOrder }} $</p>
+                        </td>
+                    </tr>
+                </table>
+                <a href="/order/EditOrder?id={{ users.id }}">
+                    <button>Редактировать</button>
+                </a>
+                <a href="/order/DeleteOrder?id={{ users.id }}">
+                    <button>Удалить</button>
+                </a>
+                <hr>
+                <hr>
+                <br><br>
+{#                {% endfor %}#}
+            </td>
+        </tr>
+    </table>
+
+
+
+
+
+
+{% endblock %}

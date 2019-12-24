@@ -1,0 +1,6 @@
+{% extends "layouts/main.twig" %}
+{% block content %}
+{% for user in users %}
+<h2>{{ user.login }}</h2>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layouts/main.twig" %}
+{% block reg %}<li><a href="/user/add">Регистрация</a></li>{% endblock %}
+{% block content %}
+    <h4>Введите логин и пароль для доступа в личный кабинет</h4>
+    <p>admin password 123</p>
+    <p>user password 123</p>
+    <form action="/user/login" method="post" style="min-height: 60vh;">
+        <input name="login" placeholder="login"> <br>
+        <input name="pass" placeholder="password"><br>
+        <input name = "upload" type="submit" value="Войти"  style="background-color: lightgreen;">
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var \App\modules\User [] $user#}
+{# */#}
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Пользователь: ' . $user->name;#}
+
+{#    echo "<h2>{$user->login} </h2>";#}
+{#    echo "<h2>{$user->pass} </h2>";#}

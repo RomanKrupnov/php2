@@ -1,0 +1,57 @@
+{% extends "layouts/main.twig" %}
+{% block content %}
+<img src="/gallery/{{ good.url_img }}" style='width:40%' alt=" ">
+<h4>{{ good.name }}</h4>
+<h5> Цена : {{ good.prise }}{{ good.currency }}</h5>
+<h5> Артикул товара : {{ good.id_product }}</h5>
+<p> Описание товара : {{ good.desc_product }}</p>
+<a href="/good">
+    <button>Вернуться в галерею</button>
+</a>
+    <a href="/basket/add?id={{ good.id }}"><span style="cursor: pointer"><button>Купить товар</button></span></a> <br>
+    <script src="/js/js.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var \App\modules\Good [] $good#}
+{# */#}
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Товар: ' . $good->name ;#}
+{#$inputProduct .=<<<php#}
+{#        <img src="/gallery/{$good->url_img}" style='width:40%'>#}
+{#        <h4>{$good->name}</h4>#}
+{#        <h5> Цена : {$good->prise}{$good->currency}</h5>#}
+{#        <h5> Артикул товара : {$good->id_product}</h5>#}
+{#        <p> Описание товара : {$good->desc_product}</p>#}
+{#php;#}
+{#$inputForm .=<<<php#}
+{#  <a href="?"> <button>Вернуться в галерею</button> </a>#}
+{#   <span"><button>Купить товар</button></span> <br>#}
+{#php;#}
+{#echo $inputProduct . $inputForm ;#}

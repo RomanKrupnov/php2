@@ -1,0 +1,18 @@
+{% extends "layouts/main.twig" %}
+{% set title = 'Оформление заказа' %}
+{% block content %}
+    <form action="/order/make" enctype="multipart/form-data" method="POST" style="min-height: 80vh;">
+        <h3>Введите ваши персональные данные для оформления заказа</h3>
+        <p><input type="text" name="name" required placeholder="Ваше имя:"></p><br>
+        <p><input type="text" name="lastName" required placeholder="Ваша фамилия:"></p><br>
+        <p><input type="text" name="telephone" required placeholder="Номер телефона"></p><br>
+        <p><input type="email" name="email" required placeholder="Email"></p><br>
+        <p>Адрес доставки</p>
+        <p><textarea name="adress" rows="8" cols="100"></textarea></p><br>
+        <input name="upload" type="submit" value="Оформить заказ">
+    </form>
+    <a href="/good">
+        <button style="font-size: 23px;">Вернутся в каталог</button>
+    </a>
+
+{% endblock %}

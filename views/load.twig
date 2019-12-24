@@ -1,0 +1,66 @@
+{% extends "layouts/mainAdmin.twig" %}
+{% set title = 'Добавление товаров' %}
+{% block content %}
+    <div class="loadFile" style="min-height: 60vh;">
+        <p>Добавьте товар в интернет магазин</p>
+        <form enctype="multipart/form-data"  method="POST" action="/good/load">
+            <input type="file" name = "userfile" required multiple><br><br>
+            <input type="text" name = "nameProduct" required  placeholder="Имя товара"> <br>
+            <input type="number" name = "priseProduct" required placeholder="Цена товара"> <br>
+            <input type="text" name = "idProduct" required placeholder="Артикул товара"> <br>
+            <input type="text" name = "descProduct"  placeholder="Описание товара"> <br>
+            <input type="submit" value="Добавить товар">
+        </form>
+        <a href="/good"><button>Перейти в каталог</button></a>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var App\modules\Good#}
+{# */#}
+{#//use App\modules\Good;#}
+{#use App\modules\Good;#}
+
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Загрузка товара';#}
+{#$content .= <<<php#}
+{#<div class="loadFile" style="min-height: 60vh;">#}
+{#    <p>Добавьте товар в интернет магазин</p>#}
+{#    <form enctype="multipart/form-data"  method="POST" action="?c=good&a=load">    #}
+{#        <input type="file" name = "userfile" required multiple><br><br>#}
+{#        <input type="text" name = "nameProduct" required  placeholder="Имя товара"> <br>#}
+{#        <input type="number" name = "priseProduct" required placeholder="Цена товара"> <br>#}
+{#        <input type="text" name = "idProduct" required placeholder="Артикул товара"> <br>#}
+{#        <input type="text" name = "descProduct"  placeholder="Описание товара"> <br>#}
+{#        <input type="submit" value="Добавить товар">#}
+{#    </form>#}
+{#    <a href="?"><button>Перейти в каталог</button></a>#}
+{#php;#}
+
+{#echo $content;#}

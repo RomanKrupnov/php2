@@ -1,0 +1,57 @@
+{% extends "layouts/main.twig" %}
+{% set title = 'Редактор учётной записи' %}
+{% block content %}
+    <div style="min-height: 60vh;">
+    <h4>Внесите изменения в вашу учетную запись</h4>
+        <form action= "/user/edit?id={{ user.id }}" enctype="multipart/form-data" method="POST" >
+            <input type = "text" name="userName" value="{{ user.name }}"> <br>
+            <input type = "text" name="login" value="{{ user.login }}"> <br>
+            <input type = "text" name="pass" placeholder="Пароль"><br>
+            <input name = "upload" type="submit" value="Сохранить"  style="background-color: lightgreen;">
+        </form>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var App\modules\User [] $user#}
+{# */#}
+{#///?c=user&a=edit&id=45#}
+{#use App\modules\User;#}
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Редактирование пользователя';#}
+{#    $content = '';#}
+{#    $content .=<<<php#}
+{#    <div style="min-height: 60vh;">#}
+{#<h4>Введите ваше имя, логин и пароль для регистрации в личный кабинет</h4>#}
+{#    <form action= "?c=user&a=edit&id={$user->id}" enctype="multipart/form-data" method="POST" >#}
+{#        <input type = "text" name="name" value="{$user->name}"> <br>#}
+{#        <input type = "text" name="login" value="{$user->login}"> <br>#}
+{#        <input type = "text" name="pass" placeholder="Пароль"><br>#}
+{#        <input name = "upload" type="submit" value="Сохранить"  style="background-color: lightgreen;">#}
+{#    </form>#}
+{#</div>#}
+{#php;#}
+{#    echo $content;#}

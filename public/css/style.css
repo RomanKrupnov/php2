@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+
+    text-decoration: none;
+    color: black;
+
+}
+
+input {
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+html, body {
+    min-height: 52%;
+    justify-content: space-around;
+}
+img:hover{
+    transform: scale(1.08);
+}
+img {
+    text-align: center;
+}
+button:hover{
+    transform: scale(1.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    height: 50px;
+    background-color: lightslategrey;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 40px;
+    font-size: 33px;
+}
+
+.content {
+    min-height: 50vh;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*position: relative;*/
+    margin-bottom: 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    height: 250px;
+    background-color: lightslategrey;
+    line-height: 50px;
+    font-size: 30px;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.loadFile {
+    padding: 30px 0;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.classForm {
+    padding-top: 20px;
+    height: 30px;
+}
+
+.basket {
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+}
+.basket tr th{
+    height: 60px;
+}
+.basket tr td p{
+   font-size: 20px;
+
+}
+
+.basket tr :hover {
+    transform: scale(1.008);
+}
+
+.message {
+    /*position: absolute;*/
+    height: 30px;
+    width: 200px;
+    color: red;
+    left: 45%;
+    top: 50%;
+
+}
+.footer-ul{
+    list-style: none;
+    text-align: center;
+}
+
+#nnavv {
+    float: left;
+    margin-bottom: 10px;
+    list-style: none;
+    /*z-index: 5;*/
+}
+
+#nnavv li {
+    float: left;
+    display: block;
+    margin-right: 10px;
+    position: relative;
+    width: 300px;
+}
+
+#nnavv li a {
+    background: lightslategrey;
+    display: block;
+    color: black;
+    text-decoration: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    width: 250px;
+}
+
+#nnavv li a:hover {
+    /* Задам фон. */
+    background: lightslategrey;
+    /* Цвет ссылки остается прежним*/
+    justify-content: space-between;
+    width: 250px;
+    color: white;
+    background: rgba(108, 13, 53, 0.74); /* Заставляю выглядеть полупрозрачным! */
+}
+#nnavv ul {
+
+    list-style: none;
+    left: -9999px;
+    -webkit-transition: 0.24s linear opacity;
+    position: absolute;
+}
+
+#nnavv ul li {
+    padding-top: 1px;
+    float: none;
+}
+
+#nnavv ul a {
+    display: block;
+    white-space: nowrap;
+}
+
+#nnavv li:hover ul {
+    left: 0;
+    opacity: 1;
+}
+
+#nnavv li:hover a {
+    background: rgba(109, 15, 53, 0.74);
+    background: lightslategrey;
+}
+
+#nnavv li:hover ul a {
+    text-decoration: none;
+    -webkit-transition: -webkit-transform 0.077s linear;
+}
+
+#nnavv li:hover ul li a:hover {
+    -moz-transform: scale(1.07);
+    -webkit-transform: scale(1.07);
+    background: #334;
+    background: rgba(50, 50, 50, 0.74);
+}

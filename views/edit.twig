@@ -1,0 +1,69 @@
+{% extends "layouts/mainAdmin.twig" %}
+{% block content %}
+    <form action="/good/edit?id={{ good.id }}" enctype="multipart/form-data" method="POST">
+        <h3>Форма редактирования товара. Внесите нужные изменения и нажмите кнопку СОХРАНИТЬ</h3>
+        <img src="/gallery/{{ good.url_img }}" alt="{{ good.name }}" style="width:400px;height:290px;"> <br>
+        <p>Имя товара:</p><input type="text" name="name" required value="{{ good.name }}"> <br>
+        <p>Адрес к картинке товара</p><input type="text" required name="url_img" value="{{ good.url_img }}"> <br>
+        <p>Цена товара</p><input type="text" name="prise" required value="{{ good.prise }}"> <br>
+        <p>Валюта товара</p><input type="text" name="currency" required value="{{ good.currency }}"> <br>
+        <p>Артикул товара</p><input type="text" name="id_product" required value="{{ good.id_product }}"> <br>
+        <p>Описание товара</p>
+        <p><textarea name="desc_product" rows="8" cols="100">{{ good.desc_product }}</textarea></p><br>
+        <input type="submit" value="Сохранить" style="background-color: lightgreen;">
+    </form><a href="/good">
+    <button style="font-size: 21px;"> В каталог</button>
+</a>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var App\modules\Good [] $good#}
+{# */#}
+
+{#use App\modules\Good;#}
+
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Редактор товара';#}
+{#$content .= <<<php#}
+{#    <form action="?c=good&a=edit&id={$good->id}" enctype="multipart/form-data"  method="POST" >#}
+{#            <h3>Форма редактирования товара. Внесите нужные изменения и нажмите  кнопку СОХРАНИТЬ</h3>#}
+{#            <img src="/gallery/{$good->url_img}" alt="{$good->name}" style="width:400px;height:290px;"> <br>#}
+{#            <p>Имя товара:</p><input type="text" name="name" required value="{$good->name}"> <br>#}
+{#            <p>Адрес к картинке товара</p><input type="text" required name="url_img" value="{$good->url_img}"> <br>#}
+{#            <p>Цена товара</p><input type="text" name="prise" required value="{$good->prise}"> <br>#}
+{#            <p>Валюта товара</p><input type="text" name="currency" required value="{$good->currency}"> <br>#}
+{#            <p>Артикул товара</p><input type="text" name="id_product" required value="{$good->id_product}"> <br>#}
+{#            <p>Описание товара</p><p><textarea name="desc_product" rows="8" cols="100">{$good->desc_product}</textarea></p><br>#}
+{#            <input type="submit" value="Сохранить"  style="background-color: lightgreen;">#}
+{#        </form><a href="?"><button style="font-size: 21px;"> В каталог </button></a>#}
+{#php;#}
+{#echo $content;#}

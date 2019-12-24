@@ -1,0 +1,29 @@
+{% extends "layouts/main.twig" %}
+{% set title = 'Корзина' %}
+{% block content %}
+    <table class="basket">
+        <tr style="background-color: lightgrey; font-size: 20px;"><th> </th>
+            <th>НАЗВАНИЕ ТОВАРА</th><th>АРТИКУЛ ТОВАРА</th><th>ЦЕНА ТОВАРА</th>
+            <th>КОЛИЧЕСТВО ТОВАРА</th><th>ИТОГ</th></tr>
+        {% set totalGoodPrice = 0 %}
+        {% set totalBasket = 0 %}
+        {% for  good in goods %}
+            {% set totalGoodPrice = good.prise * good.count %};
+            {% set totalBasket = totalBasket + totalGoodPrice %}
+        <tr><td><a href="/good/one?id={{ good.id }}"><img src="/gallery/{{ good.url_img }}" alt="{{ good.name}}" style="width:190px; height:150px;"></a></td>
+            <td><p>{{ good.name}}</p></td>
+            <td><p>{{ good.id_product}}</p></td>
+            <td><p>{{ good.prise}} $</p></td>
+            <td><p>{{ good.count}}</p></td>
+            <td><p> {{ good.prise * good.count }} $</p></td>
+            <td><a href="/basket/del?id={{ good.id }}"> <button  style="background-color: crimson;"> --  </button></a>
+                <a href="/basket/add?id={{ good.id }}"><button  style="background-color: lightgreen;"> + </button></a></td></tr>
+        {% endfor %}
+        <tr><td></td><td></td><td></td><td></td><td></td>
+            <td style="background-color: slategrey;color:white; font-size: 15px"><p>Итого: {{ totalBasket }} $</p></td></tr>
+    </table>
+    <ul style="display: inline-block; list-style: none; font-size: 23px;justify-content:right;line-height: 50px;"><li><a href="/good"><button>Вернутся в каталог</button></a></li>
+        <li><a href="{{ link }}"><button  style="background-color: lightgreen;">Оформить заказ</button></a></li></ul>
+
+
+{% endblock %}

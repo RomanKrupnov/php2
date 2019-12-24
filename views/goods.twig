@@ -1,0 +1,76 @@
+{% extends "layouts/main.twig" %}
+{% set title = 'Каталог' %}
+{% block content %}
+    <div class="content" style="display: flex; padding-top: 20px; ">
+        {% for good in goods %}
+            <div style="margin-bottom: 25px;">
+                <a href= "/good/one?id={{ good.id }}"> <img src="/gallery/{{good.url_img}}" alt="{{ good.name }}" style="width:260px;height:190px;">
+                    <ul><li><p>Цена: {{ good.prise }}{{ good.currency }}</p></li>
+                    </ul></a>
+                <a href="/basket/add?id={{ good.id }}"><span style="cursor: pointer"><button>Купить товар</button></span></a> <br>
+            </div>
+        {% endfor %}
+    </div>
+    <script src="/js/js.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#<?php#}
+{#/**#}
+{# * @var \App\modules\Good [] $goods#}
+{# */#}
+{#unset($_SESSION['title']);#}
+{#$_SESSION['title'] = 'Каталог';#}
+{#$inputProducts = <<<php#}
+{#    <div class="content" style="display: flex; padding-top: 20px; ">#}
+{#php;#}
+{#foreach ($goods as $good){#}
+{#    $inputProducts .=<<<php#}
+{#            <div style="margin-bottom: 25px;">#}
+{#            <a href= "?c=good&a=one&id={$good->id}"> <img src="/gallery/{$good->url_img}" alt="{$good->name}" style="width:260px;height:190px;">#}
+{#            <ul><li><p>Цена: {$good->prise}{$good->currency}</p></li>#}
+{#            </ul></a>#}
+{#            <span ><button>Купить товар</button></span> <br>#}
+{#            </div>#}
+{#php;#}
+
+{#}#}
+{#$inputProducts .='</div>';#}
+{#echo $inputProducts;#}
